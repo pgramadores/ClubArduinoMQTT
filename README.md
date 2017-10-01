@@ -1,26 +1,32 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+## Aplicación movil para Club arduino Chile
 
-## How to use this template
+Esta aplicación permite el uso de un servidor mqtt para la interacción de dispositivos IoT desarrollada por y para la comunidad de Club arduino Chile.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+### Para ejecutarla debes:
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+Clonar el repositorio a tu computadora
 
 ```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myTabs tabs
+$ git clone https://github.com/pgramadores/ClubArduinoMQTT.git
+$ cd ClubArduinoMQTT/
+$ npm install
 ```
 
-Then, to run it, cd into `myTabs` and run:
+Para ejecutarla en un dispositivo movil, debes ejecutar
 
 ```bash
 $ ionic cordova platform add ios
 $ ionic cordova run ios
 ```
 
-Substitute ios for android if not on a Mac.
+y para ejecutarlo en android
 
+```bash
+$ ionic cordova platform add android
+$ ionic cordova run android
+```
+
+Si deseas cooperar con el desarrollo y mejora de la aplicación te invitamos a hacerlo haciendo un fork del repositorio, luego haciendo los cambios y finalmente enviandonos el pull request para agregar tus cambios.
+
+
+Por cualquier duda comunicate con contacto@pro-gramadores.org o al sitio web de club arduino http://clubarduino.cl
