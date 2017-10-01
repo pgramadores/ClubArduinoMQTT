@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
+import { ConectarPage } from '../conectar/conectar';
 import { EstadisticasPage } from '../estadisticas/estadisticas';
 import { NosotrosPage } from '../nosotros/nosotros';
 
@@ -11,7 +11,7 @@ import { NosotrosPage } from '../nosotros/nosotros';
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
+  tab1Root = ConectarPage;
   tab2Root = AboutPage;
   tab3Root = ContactPage;
   tab4Root = EstadisticasPage;
