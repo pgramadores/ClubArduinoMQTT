@@ -6,6 +6,9 @@ import { MyApp } from './app.component';
 import { SuscribirPage } from '../pages/suscribir/suscribir';
 import { PublicarPage } from '../pages/publicar/publicar';
 import { ConectarPage } from '../pages/conectar/conectar';
+import { EstadisticasPage } from '../pages/estadisticas/estadisticas';
+import { NosotrosPage } from '../pages/nosotros/nosotros';
+
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -17,6 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SuscribirPage,
     PublicarPage,
     ConectarPage,
+    EstadisticasPage,
+    NosotrosPage,
     TabsPage
   ],
   imports: [
@@ -29,6 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SuscribirPage,
     PublicarPage,
     ConectarPage,
+    EstadisticasPage,
+    NosotrosPage,
     TabsPage
   ],
   providers: [
