@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
+import {
+  MqttMessage,
+  MqttModule,
+  MqttService
+} from 'angular2-mqtt';
 
 @Component({
   selector: 'page-conectar',
@@ -7,8 +13,12 @@ import { NavController } from 'ionic-angular';
 })
 export class ConectarPage {
 
-  constructor(public navCtrl: NavController) {
+  txtServidor: String;
 
+  
+
+  constructor(public navCtrl: NavController) {
+    this.txtServidor = "holiwis";
   }
 
 }
