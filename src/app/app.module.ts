@@ -11,11 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {
-  MqttMessage,
-  MqttModule,
-  MqttService
-} from 'angular2-mqtt';
+
 
 @NgModule({
   declarations: [
@@ -27,10 +23,6 @@ import {
   ],
   imports: [
     BrowserModule,
-    MqttModule.forRoot({
-      provide: MqttService,
-      //useFactory: mqttServiceFactory
-    }),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
