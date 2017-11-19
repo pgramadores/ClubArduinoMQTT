@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding >
+<ion-content padding>
   <ion-list inset>
 
     <ion-item>
@@ -14,12 +14,12 @@
 
     <ion-item>
       <ion-label>Puerto</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="txtPuerto"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Topico</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="txtTopico"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -29,8 +29,18 @@
 
     <br>
 
-    <button ion-button full>Conectar</button>
+    <button ion-button full (click)="ConectarMQTT()">{{btnConectar}}</button>
 
+    <br>
 
+    <ion-list>
+      <ion-item *ngFor="let response of MensajesRecibidos">
+        <ion-label class="label">
+          <p>{{response.mensaje}}</p>
+        </ion-label>
+        <ion-note item-end="" class="note note-ios">{{response.fecha}}</ion-note>
+      </ion-item>
+    </ion-list>
   </ion-list>
+
 </ion-content>
