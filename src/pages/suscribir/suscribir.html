@@ -18,27 +18,27 @@
 
     <ion-item>
       <ion-label>Suscripcion:</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="txtTopico" (focusout)="Conectar()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Primer piso:</ion-label>
-      <ion-toggle checked="false"></ion-toggle>
+      <ion-toggle checked="false" (ionChange)="Enviar($event, '1')"></ion-toggle>
     </ion-item>
 
     <ion-item>
       <ion-label>Segundo piso:</ion-label>
-      <ion-toggle checked="false"></ion-toggle>
+      <ion-toggle checked="false" (ionChange)="Enviar($event, '2')"></ion-toggle>
     </ion-item>
 
     <ion-item>
       <ion-label>Tercer piso:</ion-label>
-      <ion-toggle checked="false"></ion-toggle>
+      <ion-toggle checked="false" (ionChange)="Enviar($event, '3')"></ion-toggle>
     </ion-item>
 
     <ion-item>
       <ion-label>Todo:</ion-label>
-      <ion-toggle checked="false"></ion-toggle>
+      <ion-toggle checked="false" (ionChange)="Enviar($event, '4')"></ion-toggle>
     </ion-item>
 
   </ion-list>

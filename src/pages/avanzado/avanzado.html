@@ -19,32 +19,32 @@
 
     <ion-item>
       <ion-label>Topico</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="txtPublicaTopico" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Mensaje</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="txtPublicaMensaje"></ion-input>
     </ion-item>
 
     <br>
 
-    <button ion-button full>Publicar</button>
+    <button ion-button full (click)="Enviar()" >Publicar</button>
 
     <h4>Suscribe</h4>
 
     <ion-item>
       <ion-label>Topico</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="txtSuscribeTopico"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Respuesta</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="txtSuscribeRespuesta"></ion-input>
     </ion-item>
 
     <br>
 
-    <button ion-button full>Suscribir</button>
+    <button ion-button full (click)="Recibir()">Suscribir</button>
   </ion-list>
 </ion-content>

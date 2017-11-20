@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 import { Paho } from 'ng2-mqtt/mqttws31';
 import * as moment from 'moment';
+import { Storage } from '@ionic/storage';
 
 @Component({
 	selector: 'page-conectar',
@@ -19,29 +20,33 @@ export class ConectarPage {
 	txtTopico: string = "Raicerk/Luz";
 	MensajesRecibidos: any = [];
 
-	constructor(public navCtrl: NavController) {
+	constructor(public navCtrl: NavController, private storage: Storage) {
 	}
 
 
-	ConectarMQTT(){
-		this.client = new Paho.MQTT.Client(this.txtServidor,this.txtPuerto , '');
+	ConectarMQTT() {
+
+		this.client = new Paho.MQTT.Client(this.txtServidor, this.txtPuerto, '');
 		this.onMessage();
 		this.onConnectionLost();
-		this.client.connect({ 
-			onSuccess: this.onConnected.bind(this) 
+		this.client.connect({
+			onSuccess: this.onConnected.bind(this)
 		});
 
-		if(this.btnConectar == "Desconectar"){
+		if (this.btnConectar == "Desconectar") {
 			this.btnConectar = "Conectar";
 		}
-		console.info(this.client);
+
+		this.storage.set('Servidor', this.txtServidor);
+		this.storage.set('Puerto', this.txtPuerto);
+
 	}
 
 	onConnected(element) {
-		console.log("Connected");
 		this.client.subscribe(this.txtTopico);
 		this.btnConectar = "Desconectar";
-		this.sendMessage("Aca toy");
+		this.sendMessage("Bienvenido al server mqtt de Club Arduino");
+		this.storage.set('Topico', this.txtTopico);
 	}
 
 	sendMessage(message: string) {
@@ -51,10 +56,11 @@ export class ConectarPage {
 	}
 
 	onMessage() {
+		
 		this.client.onMessageArrived = (message: Paho.MQTT.Message) => {
-			
+
 			let now = moment();
-			
+
 			this.MensajesRecibidos.push({
 				fecha: now.format("DD-MM-YYYY H:mm:ss"),
 				mensaje: message.payloadString
